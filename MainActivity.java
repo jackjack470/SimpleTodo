@@ -32,16 +32,12 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-
-
-
-
         items = new ArrayList<>();
         items.add("Buy milk");
         items.add("Go to the gym");
         items.add("Have fun!");
 
-       ItemsAdapter.OnLongClickListener onLongClickListener = new ItemsAdapter.OnLongClickListener(){
+       ItemsAdapter.OnLongClickListener onLongClickListener = new ItemsAdapter.OnLongClickListener() {
             @Override
             public void onItemLongClicked(int position) {
                 items.remove(position);
@@ -49,8 +45,8 @@ public class MainActivity extends AppCompatActivity {
             }
         };
 
-        ItemsAdapter ItemsAdapter = new ItemsAdapter(items);
-        rvItems.setAdapter(ItemsAdapter);
+        itemsAdapter = new ItemsAdapter(items, onLongClickListener);
+        rvItems.setAdapter(itemsAdapter);
         rvItems.setLayoutManager(new LinearLayoutManager(this));
 
         btnAdd.setOnClickListener(new View.OnClickListener() {
@@ -58,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 String todoItem = etItem.getText().toString();
                 items.add(todoItem);
-                ItemsAdapter.notifyItemInserted(items.size() - 1);
+                itemsAdapter.notifyItemInserted(items.size() - 1);
                 etItem.setText("");
                 Toast.makeText(getApplicationContext(), "item was added", Toast.LENGTH_SHORT).show();
             }
