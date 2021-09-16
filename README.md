@@ -24,7 +24,7 @@ The following **additional** features are implemented:
 * [X] List anything else that you can get done to improve the app functionality!
 
 ## Video Walkthrough
-<iframe src="https://giphy.com/embed/MnQMiXyVEEzYVNSsw8" width="254" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/MnQMiXyVEEzYVNSsw8">via GIPHY</a></p>
+
 
 Here's a walkthrough of implemented user stories:
 
